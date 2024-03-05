@@ -8,6 +8,7 @@ import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import { getPostgresConfig } from './configs/postgres.config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { CategoryModule } from './category/category.module';
 
 
 @Module({
@@ -24,6 +25,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
     ProductModule,
     UsersModule,
     AuthModule,
+    CategoryModule,
   ],
   controllers: [],
   providers: [],
