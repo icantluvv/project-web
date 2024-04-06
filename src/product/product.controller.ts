@@ -24,11 +24,11 @@ import { JwtAuthGuard } from 'src/auth/guards/jwt.guard';
 
 @ApiTags('product')
 @Controller('product')
-@ApiBearerAuth()
-@UseGuards(JwtAuthGuard)
+
 export class ProductController {
   constructor(private readonly productService: ProductService) {}
-
+  @ApiBearerAuth()
+  @UseGuards(JwtAuthGuard)
   @Post()
   @ApiConsumes('multipart/form-data')
   @UseInterceptors(FileInterceptor('image', { storage: fileStorage }))
@@ -53,7 +53,8 @@ export class ProductController {
   findOne(@Param('id') id: string): Promise<ProductEntity> {
     return this.productService.findOne(+id);
   }
-
+  @ApiBearerAuth()
+  @UseGuards(JwtAuthGuard)
   @Patch(':id')
   @ApiConsumes('multipart/form-data')
   @UseInterceptors(FileInterceptor('image', { storage: fileStorage }))
@@ -64,7 +65,8 @@ export class ProductController {
   ): Promise<ProductEntity> {
     return this.productService.update(+id, dto, image);
   }
-
+  @ApiBearerAuth()
+  @UseGuards(JwtAuthGuard)
   @Delete(':id')
   remove(@Param('id') id: string): Promise<DeleteResult> {
     return this.productService.remove(+id);

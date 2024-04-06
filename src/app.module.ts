@@ -9,6 +9,8 @@ import { AuthModule } from './auth/auth.module';
 import { getPostgresConfig } from './configs/postgres.config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { CategoryModule } from './category/category.module';
+import { CartModule } from './cart/cart.module';
+import { OrderModule } from './order/order.module';
 
 
 @Module({
@@ -26,6 +28,8 @@ import { CategoryModule } from './category/category.module';
     UsersModule,
     AuthModule,
     CategoryModule,
+    OrderModule,
+    CartModule,
   ],
   controllers: [],
   providers: [],

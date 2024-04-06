@@ -20,11 +20,10 @@ import { JwtAuthGuard } from 'src/auth/guards/jwt.guard';
 
 @ApiTags('category')
 @Controller('category')
-@ApiBearerAuth()
-@UseGuards(JwtAuthGuard)
 export class CategoryController {
   constructor(private readonly categoryService: CategoryService) {}
-
+  @ApiBearerAuth()
+  @UseGuards(JwtAuthGuard)
   @Post()
   @ApiConsumes('multipart/form-data')
   @UseInterceptors(FileInterceptor('image', { storage: fileStorage }))
@@ -44,7 +43,8 @@ export class CategoryController {
   findOne(@Param('id') id: string) {
     return this.categoryService.findOne(+id);
   }
-
+  @ApiBearerAuth()
+  @UseGuards(JwtAuthGuard)
   @Patch(':id')
   update(
     @Param('id') id: string,
@@ -53,7 +53,8 @@ export class CategoryController {
   ) {
     return this.categoryService.update(+id, updateCategoryDto, image);
   }
-
+  @ApiBearerAuth()
+  @UseGuards(JwtAuthGuard)
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.categoryService.delete(+id);
