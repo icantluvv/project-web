@@ -6,12 +6,15 @@ import {
   UseGuards,
   Req,
   Patch,
+  Delete,
+  Param
 } from '@nestjs/common';
 import { CartService } from './cart.service';
 import { CreateCartDto } from './dto/create-cart.dto';
 import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 import { JwtAuthGuard } from 'src/auth/guards/jwt.guard';
 import { UpdateCartDto } from './dto/update-cart.dto';
+import { DeleteResult } from 'typeorm';
 
 @ApiTags('cart')
 @Controller('cart')
@@ -35,5 +38,10 @@ console.log("**", req.id);
   @Patch()
   patch(@Body() dto: UpdateCartDto, @Req() req: any) {
     return this.cartService.update(dto, req.id);
+  }
+
+  @Delete(':id')
+  remove(@Param('id') id: string): Promise<DeleteResult> {
+    return this.cartService.remove(+id);
   }
 }
