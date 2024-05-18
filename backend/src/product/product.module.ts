@@ -14,11 +14,7 @@ import { PromoModule } from 'src/promo/promo.module';
 @Module({
   imports: [
     ConfigModule,
-    TypeOrmModule.forFeature([
-      ProductEntity,
-      CategoryEntity,
-      PromoEntity,
-    ]),
+    TypeOrmModule.forFeature([ProductEntity, CategoryEntity, PromoEntity]),
     CategoryModule,
     PromoModule,
   ],

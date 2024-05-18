@@ -23,9 +23,6 @@ export class CreateProductDto {
   description: string = 'Описание';
 
   @ApiProperty()
-  amount: number = 10;
-
-  @ApiProperty()
   price: number = 10000;
 
   @ApiProperty()

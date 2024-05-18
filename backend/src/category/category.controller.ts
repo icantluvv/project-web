@@ -6,6 +6,7 @@ import {
   Patch,
   Param,
   Delete,
+  Response,
   UseInterceptors,
   UploadedFile,
   UseGuards,
@@ -37,6 +38,11 @@ export class CategoryController {
   @Get()
   findAll() {
     return this.categoryService.findAll();
+  }
+
+  @Get('/image/:path')
+  download(@Param('path') path: string, @Response() response) {
+    return response.sendFile(path, { root: './db_images/category' });
   }
 
   @Get(':id')

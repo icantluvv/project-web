@@ -2,9 +2,7 @@ import {
   Column,
   Entity,
   JoinColumn,
-  ManyToMany,
   ManyToOne,
-  OneToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
 
@@ -23,9 +21,6 @@ export class ProductEntity {
 
   @Column()
   description: string;
-
-  @Column()
-  amount: number;
 
   @Column()
   price: number;

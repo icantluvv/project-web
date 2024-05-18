@@ -24,7 +24,6 @@ import { JwtAuthGuard } from 'src/auth/guards/jwt.guard';
 
 @ApiTags('product')
 @Controller('product')
-
 export class ProductController {
   constructor(private readonly productService: ProductService) {}
   @ApiBearerAuth()

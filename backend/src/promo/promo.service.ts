@@ -20,10 +20,10 @@ export class PromoService {
   ): Promise<PromoEntity> {
     return this.repository.save({
       image: image.filename,
-      title: dto.title,
-      text: dto.text,
-      rating: dto.rating,
-      price: dto.price,
+      // title: dto.title,
+      // text: dto.text,
+      // rating: dto.rating,
+      // price: dto.price,
     });
   }
 
@@ -40,18 +40,18 @@ export class PromoService {
     if (!toUpdate) {
       throw new BadRequestException(`Записи с id=${id} не найдено`);
     }
-    if (dto.text) {
-      toUpdate.text = dto.text;
-    }
-    if (dto.title) {
-      toUpdate.title = dto.title;
-    }
-    if (dto.rating) {
-      toUpdate.rating = dto.rating;
-    }
-    if (dto.price) {
-      toUpdate.price = dto.price;
-    }
+    // if (dto.text) {
+    //   toUpdate.text = dto.text;
+    // }
+    // if (dto.title) {
+    //   toUpdate.title = dto.title;
+    // }
+    // if (dto.rating) {
+    //   toUpdate.rating = dto.rating;
+    // }
+    // if (dto.price) {
+    //   toUpdate.price = dto.price;
+    // }
     if (image) {
       if (toUpdate.image !== image.filename) {
         fs.unlink(`db_images/promo/${toUpdate.image}`, (err) => {

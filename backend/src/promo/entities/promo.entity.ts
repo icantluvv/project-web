@@ -15,18 +15,6 @@ export class PromoEntity {
   @Column()
   image: string;
 
-  @Column()
-  title: string;
-
-  @Column()
-  text: string;
-
-  @Column()
-  rating: number;
-
-  @Column()
-  price: number;
-
   @OneToOne(() => ProductEntity)
   @JoinColumn()
   product: ProductEntity;

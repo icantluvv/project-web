@@ -18,11 +18,9 @@ export class CategoryService {
     dto: CreateCategoryDto,
     image: Express.Multer.File,
   ): Promise<CategoryEntity> {
-    // console.log(dto, dto.name);
     return this.repository.save({
       image: image.filename,
       name: dto.name,
-      subcategory: dto.subcategory,
     });
   }
   findAll() {
@@ -41,9 +39,7 @@ export class CategoryService {
     if (dto.name) {
       toUpdate.name = dto.name;
     }
-    if (dto.subcategory) {
-      toUpdate.subcategory = dto.subcategory;
-    }
+
     if (image) {
       if (toUpdate.image !== image.filename) {
         fs.unlink(`db_images/promo/${toUpdate.image}`, (err) => {
