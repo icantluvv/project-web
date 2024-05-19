@@ -11,11 +11,11 @@ import { UserEntity } from 'src/users/entities/user.entity';
 export class CartService {
   async getItemsInCart(userId: number): Promise<CartItemEntity[]> {
     console.log(userId);
-  
+
     const userCart = await this.cartItemRepository.findBy({
       user: { id: userId },
     });
-console.log("CartService>", userCart);
+    console.log('CartService>', userCart);
     return userCart;
   }
 
@@ -28,7 +28,7 @@ console.log("CartService>", userCart);
 
     @InjectRepository(UserEntity)
     private userRepository: Repository<UserEntity>,
-  ) { }
+  ) {}
 
   async create(dto: CreateCartDto, userId: number) {
     // create new record
@@ -77,7 +77,6 @@ console.log("CartService>", userCart);
       .where('t.userId = :userId', { userId: userId })
       .execute();
   }
-
 
   async remove(id: number) {
     return this.cartItemRepository.delete(id);

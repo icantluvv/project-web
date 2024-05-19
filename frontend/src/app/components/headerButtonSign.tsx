@@ -1,37 +1,36 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const HeaderButtonSign = () => {
-    function signIn() {}
+    const router = useRouter();
 
-    function signUp() {}
+    function goAccount() {
+        router.push(`/account`);
+    }
+
     return (
-        <div className="w-3/12 flex justify-between items-center text-sm">
-            <button className="md:flex mr-5 lg-display-none justify-end">
-                <Image
-                    src="images/header/user.svg"
-                    alt="account"
-                    width={30}
-                    height={30}
-                    layout="responsible"
-                ></Image>
-            </button>
-            <button
-                className="hover:border-b-2 mr-1"
-                type="button"
-                onClick={signIn}
-            >
-                <p className="lg:flex md-display-none">Вход</p>
-            </button>
-            <p className="lg:flex md-display-none">/</p>
-            <button
-                className="hover:border-b-2 ml-1"
-                type="button"
-                onClick={signUp}
-            >
-                <p className="lg:flex md-display-none">Регистрация</p>
-            </button>
+        <div className="w-3/12 flex justify-end items-center ">
+            <div className="w-full flex xxs:max-w-[60px] xxs:min-w-[60px] xxs:min-h-[50px]  justify-end">
+                <button
+                    onClick={goAccount}
+                    className="flex items-center pt-1 pb-1 pl-4 pr-4 bg-[#4798DE] active:bg-[#204D8B] rounded-[10px]"
+                >
+                    <p
+                        className={`text-[14px] text-white mr-[0.5em] hidden sm:hidden`}
+                    >
+                        Аккаунт
+                    </p>
+                    <Image
+                        src="images/header/user.svg"
+                        alt="account"
+                        width={40}
+                        height={40}
+                        layout="responsible"
+                    />
+                </button>
+            </div>
         </div>
     );
 };

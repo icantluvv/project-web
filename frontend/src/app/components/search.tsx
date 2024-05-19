@@ -1,9 +1,15 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const Search = () => {
-    function allCategories() {}
+    const router = useRouter();
+
+    function allCategories() {
+        router.push(`/product`);
+    }
     return (
         <div className="flex flex-col justify-center items-center w-full bg-white">
             <div className="flex flex-col justify-center pt-5 pb-5 items-center w-full ">
@@ -17,9 +23,10 @@ const Search = () => {
                             alt="logo header"
                             width={190}
                             height={51}
+                            className="hover:fill-none"
                         ></Image>
                     </button>
-                    <div className="flex w-4/12">
+                    <div className="flex w-4/12 xxs:hidden sm:flex">
                         <input
                             type="text"
                             placeholder="Поиск товаров и брендов"
@@ -34,7 +41,7 @@ const Search = () => {
                             ></Image>
                         </button>
                     </div>
-                    <div className="lg:flex flex-col w-3/12 ml-5 md-display-none ">
+                    <div className="lg:flex flex-col w-3/12 ml-5 hidden">
                         <a className="text-base text-[#6F7682]">
                             8-800-000-00-00
                         </a>
@@ -43,9 +50,9 @@ const Search = () => {
                         </label>
                     </div>
 
-                    <div className="flex justify-around w-3/12">
+                    <div className="flex  md:justify-around xxs:justify-end w-3/12">
                         <button>
-                            <div className="flex flex-col items-center">
+                            <div className="flex flex-col items-center md:mr-0 xxs:mr-5">
                                 <Image
                                     src="/images/header/like.svg"
                                     alt="like"
@@ -53,13 +60,13 @@ const Search = () => {
                                     height={25}
                                     layout="responsible"
                                 ></Image>
-                                <p className="text-xs text-[#4798DE] lg:flex md-display-none">
+                                <p className="text-xs text-[#4798DE] hidden lg:flex lg:flex md-display-none">
                                     Избранное
                                 </p>
                             </div>
                         </button>
                         <button>
-                            <div className="flex flex-col items-center">
+                            <div className="flex flex-col hidden md:flex items-center">
                                 <Image
                                     src="/images/header/poll.svg"
                                     alt="like"
@@ -67,14 +74,17 @@ const Search = () => {
                                     height={25}
                                     layout="responsible"
                                 ></Image>
-                                <p className="text-xs text-[#4798DE] lg:flex md-display-none">
+                                <p className="text-xs text-[#4798DE] hidden lg:flex ">
                                     Сравнение
                                 </p>
                             </div>
                             <p></p>
                         </button>
                         <button>
-                            <div className="flex flex-col items-center">
+                            <Link
+                                href={`/cart`}
+                                className="flex flex-col items-center"
+                            >
                                 <Image
                                     src="/images/header/cart.svg"
                                     alt="like"
@@ -82,10 +92,10 @@ const Search = () => {
                                     height={25}
                                     layout="responsible"
                                 ></Image>
-                                <p className="text-xs text-[#4798DE] lg:flex md-display-none">
+                                <p className="text-xs text-[#4798DE] hidden lg:flex lg:flex md-display-none">
                                     Корзина
                                 </p>
-                            </div>
+                            </Link>
                             <p></p>
                         </button>
                     </div>

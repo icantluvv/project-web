@@ -17,7 +17,7 @@ const footer = () => {
                             ></Image>
                         </Link>
                     </div>
-                    <div className="text-[#6F7682] text-sm flex flex-col xxs:items-center">
+                    <div className="text-[#6F7682] lg:items-start text-sm flex flex-col xxs:items-center">
                         <p className="mt-10 xxs:mt-5 mb-1">
                             Мы в социальных сетях:
                         </p>
@@ -47,19 +47,19 @@ const footer = () => {
                     </h1>
 
                     <h1></h1>
-                    <li className="mb-5 xxs:text-xs">
+                    <li className="mb-5 xxs:text-xs hover:border-b">
                         <a href="#">Доставка</a>
                     </li>
-                    <li className="mb-5 xxs:text-xs">
+                    <li className="mb-5 xxs:text-xs hover:border-b">
                         <a href="#">Оплата</a>
                     </li>
-                    <li className="mb-5 xxs:text-xs">
+                    <li className="mb-5 xxs:text-xs hover:border-b">
                         <a href="#">Гарантии и возврат</a>
                     </li>
-                    <li className="mb-5 xxs:text-xs">
+                    <li className="mb-5 xxs:text-xs hover:border-b">
                         <a href="#">Производители</a>
                     </li>
-                    <li className="mb-5 xxs:text-xs">
+                    <li className="mb-5 xxs:text-xs hover:border-b">
                         <a href="#">Статьи</a>
                     </li>
                 </ul>
@@ -69,19 +69,19 @@ const footer = () => {
                         КОМПАНИЯ
                     </h1>
 
-                    <li className="mb-5 xxs:text-xs">
+                    <li className="mb-5 xxs:text-xs hover:border-b">
                         <a href="#">О нас</a>
                     </li>
-                    <li className="mb-5 xxs:text-xs">
+                    <li className="mb-5 hover:border-b xxs:text-xs">
                         <a href="#">Контакты</a>
                     </li>
-                    <li className="mb-5 xxs:text-xs">
+                    <li className="mb-5 hover:border-b xxs:text-xs">
                         <a href="#">Пользовательское соглашение</a>
                     </li>
-                    <li className="mb-5 xxs:text-xs">
+                    <li className="mb-5 hover:border-b xxs:text-xs">
                         <a href="#">Политика конфиденциальности</a>
                     </li>
-                    <li className="mb-5 xxs:text-xs">
+                    <li className="mb-5 hover:border-b xxs:text-xs">
                         <a href="#">Обратная связь</a>
                     </li>
                 </ul>
@@ -96,7 +96,7 @@ const footer = () => {
                             alt="phone"
                             width={16}
                             height={16}
-                            className="mr-3"
+                            className="mr-3 "
                         ></Image>
                         8(800)800-00-00
                     </li>

@@ -1,32 +1,51 @@
 import Image from "next/image";
 import HeaderButtonSign from "./headerButtonSign";
+import Link from "next/link";
 
-const header = () => {
+const Header = () => {
     return (
         <div className="flex flex-col justify-center items-center w-full bg-white">
             <div className="flex flex-col justify-center items-center w-full border-b-2">
-                <div className="flex w-11/12 h-full pt-5 pb-5  ">
-                    <div className="w-[190px] h-[51px]">
+                <div className="flex lg:w-[90%] xxs:w-[95%] justify-between items-center h-full pt-5 pb-5">
+                    <Link
+                        href="/"
+                        className="lg:min-w-[180px] md:min-w-[120px] h-full"
+                    >
                         <Image
                             src="/images/footer/logo.svg"
                             alt="logo header"
                             width={190}
                             height={51}
-                        ></Image>
-                    </div>
-                    <nav className="w-full flex items-center pl-10 pr-[130px] justify-between text-sm">
-                        <a href="">О нас</a>
-                        <a href="">Производители</a>
-                        <a href="">Гарантии и возврат</a>
-                        <a href="">Доставка</a>
-                        <a href="">Оплата</a>
-                        <a href="">Контакты</a>
+                        />
+                    </Link>
+                    <nav className="w-full flex items-center hidden md:flex max-w-[1000px] pl-5 justify-between text-sm max-w-[800px] text-[12px] md:text-[12px] lg:text-[14px]">
+                        <a
+                            className="active:text-[#15244F] mr-[3px] hover:border-b-2"
+                            href="#"
+                        >
+                            О нас
+                        </a>
+                        <a href="#" className="hover:border-b-2 mr-[5px]">
+                            Производители
+                        </a>
+                        <a href="#" className="hover:border-b-2 mr-[5px]">
+                            Гарантии и возврат
+                        </a>
+                        <a href="#" className="hover:border-b-2 mr-[5px]">
+                            Доставка
+                        </a>
+                        <a href="#" className="hover:border-b-2 mr-[5px]">
+                            Оплата
+                        </a>
+                        <a href="#" className="hover:border-b-2 mr-[5px]">
+                            Контакты
+                        </a>
                     </nav>
-                    <HeaderButtonSign></HeaderButtonSign>
+                    <HeaderButtonSign />
                 </div>
             </div>
         </div>
     );
 };
 
-export default header;
+export default Header;

@@ -24,9 +24,9 @@ export default function RootLayout({
             <body className={inter.className}>
                 <Header />
                 <Search></Search>
-                <SignUp></SignUp>
+                {/* <SignUp></SignUp> */}
                 {children}
-                <Message />
+                {/* <Message /> */}
                 <Footer />
             </body>
         </html>
